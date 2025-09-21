@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=2200">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pavani's Sketchbook - Happy Birthday!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* --- ✨ NEW: PRELOADER STYLES ✨ --- */
+        /* --- ✨ PRELOADER STYLES ✨ --- */
         #preloader {
             position: fixed;
             top: 0;
@@ -16,7 +16,7 @@
             width: 100%;
             height: 100%;
             z-index: 9999;
-            background-color: #FDE2E4; /* A soft, celebratory pink/peach */
+            background-color: #FDE2E4;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -36,17 +36,32 @@
         .preloader-text {
             font-family: 'Just Another Hand', cursive;
             font-size: 6em;
-            color: #a04040; /* Using the pin color for consistency */
-            margin-bottom: 20px;
+            color: #a04040;
             opacity: 0;
-            animation: fadeInText 1s ease 0.5s forwards;
+            margin: 0;
+            line-height: 0.9;
+        }
+        
+        .preloader-text:nth-of-type(1) {
+             animation: fadeInText 1s ease 0.5s forwards;
+        }
+        .preloader-text:nth-of-type(2) {
+             animation: fadeInText 1s ease 0.8s forwards;
         }
 
         .cake-svg {
             width: 150px;
             height: 150px;
             opacity: 0;
-            animation: fadeInText 1s ease 1s forwards;
+            margin-top: 30px;
+            animation: fadeInText 1s ease 1.2s forwards;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+        }
+
+        .cake-svg:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 4px 8px rgba(160, 64, 64, 0.4));
         }
 
         .cake-svg .cake-layer { fill: #D29A76; }
@@ -79,13 +94,12 @@
             box-sizing: border-box; 
             min-height: 100vh; 
             position: relative; 
-            /* --- ✨ GIRLY COLLEGE AESTHETIC BACKGROUND ✨ --- */ 
             background-color: #f5f1eb; 
-            background-image: /* 1. Multiple Coffee Stains */ radial-gradient(circle at 15% 25%, transparent 35px, rgba(139, 94, 60, 0.25) 36px, rgba(139, 94, 60, 0.25) 38px, transparent 39px), radial-gradient(circle at 85% 15%, transparent 28px, rgba(160, 108, 73, 0.2) 29px, rgba(160, 108, 73, 0.2) 31px, transparent 32px), radial-gradient(circle at 75% 85%, transparent 42px, rgba(139, 94, 60, 0.18) 43px, rgba(139, 94, 60, 0.18) 45px, transparent 46px), radial-gradient(circle at 25% 75%, transparent 38px, rgba(160, 108, 73, 0.22) 39px, rgba(160, 108, 73, 0.22) 41px, transparent 42px), /* 2. Sunflowers - Large and Small */ url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><g transform="translate(60,60) rotate(8)"><circle cx="0" cy="0" r="15" fill="%23654321" opacity="0.3"/><path d="M0,-25 L8,-40 L0,-35 L-8,-40 Z" fill="%23FFD700" opacity="0.4"/><path d="M18,-18 L35,-25 L30,-15 L25,-30 Z" fill="%23FFD700" opacity="0.4" transform="rotate(45)"/><path d="M25,0 L40,-8 L35,0 L40,8 Z" fill="%23FFD700" opacity="0.4" transform="rotate(90)"/><path d="M18,18 L35,25 L30,15 L25,30 Z" fill="%23FFD700" opacity="0.4" transform="rotate(135)"/><path d="M0,25 L8,40 L0,35 L-8,40 Z" fill="%23FFD700" opacity="0.4" transform="rotate(180)"/><path d="M-18,18 L-35,25 L-30,15 L-25,30 Z" fill="%23FFD700" opacity="0.4" transform="rotate(225)"/><path d="M-25,0 L-40,8 L-35,0 L-40,-8 Z" fill="%23FFD700" opacity="0.4" transform="rotate(270)"/><path d="M-18,-18 L-35,-25 L-30,-15 L-25,-30 Z" fill="%23FFD700" opacity="0.4" transform="rotate(315)"/></g></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"><g transform="translate(40,40) rotate(-15)"><circle cx="0" cy="0" r="10" fill="%23654321" opacity="0.25"/><path d="M0,-15 L5,-25 L0,-22 L-5,-25 Z" fill="%23FFD700" opacity="0.35"/><path d="M11,-11 L22,-15 L18,-9 L15,-18 Z" fill="%23FFD700" opacity="0.35" transform="rotate(45)"/><path d="M15,0 L25,-5 L22,0 L25,5 Z" fill="%23FFD700" opacity="0.35" transform="rotate(90)"/><path d="M11,11 L22,15 L18,9 L15,18 Z" fill="%23FFD700" opacity="0.35" transform="rotate(135)"/><path d="M0,15 L5,25 L0,22 L-5,25 Z" fill="%23FFD700" opacity="0.35" transform="rotate(180)"/><path d="M-11,11 L-22,15 L-18,9 L-15,18 Z" fill="%23FFD700" opacity="0.35" transform="rotate(225)"/><path d="M-15,0 L-25,5 L-22,0 L-25,-5 Z" fill="%23FFD700" opacity="0.35" transform="rotate(270)"/><path d="M-11,-11 L-22,-15 L-18,-9 L-15,-18 Z" fill="%23FFD700" opacity="0.35" transform="rotate(315)"/></g></svg>'), /* 3. Cute Doodles - Stars, Hearts, XOXOs */ url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><path d="M30 5 L35 20 L50 20 L38 30 L43 45 L30 35 L17 45 L22 30 L10 20 L25 20 Z" fill="rgba(255,182,193,0.3)" transform="rotate(12 30 30)"/></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="90" height="90"><path d="M45 75 L15 25 A 15 15, 0, 0, 1, 45 25 A 15 15, 0, 0, 1, 75 25 Z" fill="rgba(255,105,180,0.25)" transform="rotate(-8 45 45)"/></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><text x="15" y="35" font-family="serif" font-size="20" fill="rgba(186,85,211,0.3)" transform="rotate(15 50 50)">xoxo</text></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70"><text x="10" y="25" font-family="serif" font-size="16" fill="rgba(255,20,147,0.25)" transform="rotate(-20 35 35)">cute!</text></svg>'), /* 4. Butterfly */ url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><g transform="translate(50,50) rotate(25)"><ellipse cx="-15" cy="-10" rx="12" ry="8" fill="rgba(218,112,214,0.3)"/><ellipse cx="15" cy="-10" rx="12" ry="8" fill="rgba(218,112,214,0.3)"/><ellipse cx="-12" cy="8" rx="8" ry="6" fill="rgba(186,85,211,0.25)"/><ellipse cx="12" cy="8" rx="8" ry="6" fill="rgba(186,85,211,0.25)"/><line x1="0" y1="-15" x2="0" y2="15" stroke="rgba(139,69,19,0.4)" stroke-width="2"/></g></svg>'), /* 5. Scattered Dots in Pink Tones */ radial-gradient(circle at 20% 60%, rgba(255,182,193,0.2) 2px, transparent 2px), radial-gradient(circle at 80% 40%, rgba(255,105,180,0.15) 1.5px, transparent 1.5px), radial-gradient(circle at 60% 80%, rgba(221,160,221,0.18) 1px, transparent 1px), /* 6. Notebook Lines (bottom layer) */ repeating-linear-gradient(#f5f1eb, #f5f1eb 26px, #e8ddd1 27px, #e8ddd1 28px); 
-            background-position: 10% 20%, /* Coffee stain 1 */ 90% 10%, /* Coffee stain 2 */ 80% 85%, /* Coffee stain 3 */ 20% 70%, /* Coffee stain 4 */ 5% 15%, /* Large sunflower */ 90% 35%, /* Small sunflower */ 25% 25%, /* Star */ 70% 60%, /* Heart */ 45% 80%, /* xoxo */ 85% 75%, /* cute text */ 15% 60%, /* Butterfly */ 0 0, /* Pink dots 1 */ 0 0, /* Pink dots 2 */ 0 0, /* Pink dots 3 */ 0 0; /* Notebook lines */ 
-            background-size: 100% 100%, /* Coffee stains */ 100% 100%, 100% 100%, 100% 100%, 140px 140px, /* Large sunflower */ 90px 90px, /* Small sunflower */ 70px 70px, /* Star */ 100px 100px, /* Heart */ 120px 120px, /* xoxo */ 80px 80px, /* cute text */ 110px 110px, /* Butterfly */ 25px 25px, /* Pink dots */ 30px 30px, 20px 20px, auto; /* Notebook lines */ 
-            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, /* Coffee stains */ no-repeat, no-repeat, /* Sunflowers */ no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, /* Doodles */ repeat, repeat, repeat, /* Pink dots */ repeat; /* Notebook lines */ 
-            background-attachment: fixed; /* --- END GIRLY COLLEGE AESTHETIC BACKGROUND --- */ 
+            background-image: radial-gradient(circle at 15% 25%, transparent 35px, rgba(139, 94, 60, 0.25) 36px, rgba(139, 94, 60, 0.25) 38px, transparent 39px), radial-gradient(circle at 85% 15%, transparent 28px, rgba(160, 108, 73, 0.2) 29px, rgba(160, 108, 73, 0.2) 31px, transparent 32px), radial-gradient(circle at 75% 85%, transparent 42px, rgba(139, 94, 60, 0.18) 43px, rgba(139, 94, 60, 0.18) 45px, transparent 46px), radial-gradient(circle at 25% 75%, transparent 38px, rgba(160, 108, 73, 0.22) 39px, rgba(160, 108, 73, 0.22) 41px, transparent 42px), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><g transform="translate(60,60) rotate(8)"><circle cx="0" cy="0" r="15" fill="%23654321" opacity="0.3"/><path d="M0,-25 L8,-40 L0,-35 L-8,-40 Z" fill="%23FFD700" opacity="0.4"/><path d="M18,-18 L35,-25 L30,-15 L25,-30 Z" fill="%23FFD700" opacity="0.4" transform="rotate(45)"/><path d="M25,0 L40,-8 L35,0 L40,8 Z" fill="%23FFD700" opacity="0.4" transform="rotate(90)"/><path d="M18,18 L35,25 L30,15 L25,30 Z" fill="%23FFD700" opacity="0.4" transform="rotate(135)"/><path d="M0,25 L8,40 L0,-35 L-8,-40 Z" fill="%23FFD700" opacity="0.4" transform="rotate(180)"/><path d="M-18,18 L-35,25 L-30,15 L-25,30 Z" fill="%23FFD700" opacity="0.4" transform="rotate(225)"/><path d="M-25,0 L-40,8 L-35,0 L-40,-8 Z" fill="%23FFD700" opacity="0.4" transform="rotate(270)"/><path d="M-18,-18 L-35,-25 L-30,-15 L-25,-30 Z" fill="%23FFD700" opacity="0.4" transform="rotate(315)"/></g></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"><g transform="translate(40,40) rotate(-15)"><circle cx="0" cy="0" r="10" fill="%23654321" opacity="0.25"/><path d="M0,-15 L5,-25 L0,-22 L-5,-25 Z" fill="%23FFD700" opacity="0.35"/><path d="M11,-11 L22,-15 L18,-9 L15,-18 Z" fill="%23FFD700" opacity="0.35" transform="rotate(45)"/><path d="M15,0 L25,-5 L22,0 L25,5 Z" fill="%23FFD700" opacity="0.35" transform="rotate(90)"/><path d="M11,11 L22,15 L18,9 L15,18 Z" fill="%23FFD700" opacity="0.35" transform="rotate(135)"/><path d="M0,15 L5,25 L0,22 L-5,25 Z" fill="%23FFD700" opacity="0.35" transform="rotate(180)"/><path d="M-11,11 L-22,15 L-18,9 L-15,18 Z" fill="%23FFD700" opacity="0.35" transform="rotate(225)"/><path d="M-15,0 L-25,5 L-22,0 L-25,-5 Z" fill="%23FFD700" opacity="0.35" transform="rotate(270)"/><path d="M-11,-11 L-22,-15 L-18,-9 L-15,-18 Z" fill="%23FFD700" opacity="0.35" transform="rotate(315)"/></g></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><path d="M30 5 L35 20 L50 20 L38 30 L43 45 L30 35 L17 45 L22 30 L10 20 L25 20 Z" fill="rgba(255,182,193,0.3)" transform="rotate(12 30 30)"/></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="90" height="90"><path d="M45 75 L15 25 A 15 15, 0, 0, 1, 45 25 A 15 15, 0, 0, 1, 75 25 Z" fill="rgba(255,105,180,0.25)" transform="rotate(-8 45 45)"/></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><text x="15" y="35" font-family="serif" font-size="20" fill="rgba(186,85,211,0.3)" transform="rotate(15 50 50)">xoxo</text></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70"><text x="10" y="25" font-family="serif" font-size="16" fill="rgba(255,20,147,0.25)" transform="rotate(-20 35 35)">cute!</text></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><g transform="translate(50,50) rotate(25)"><ellipse cx="-15" cy="-10" rx="12" ry="8" fill="rgba(218,112,214,0.3)"/><ellipse cx="15" cy="-10" rx="12" ry="8" fill="rgba(218,112,214,0.3)"/><ellipse cx="-12" cy="8" rx="8" ry="6" fill="rgba(186,85,211,0.25)"/><ellipse cx="12" cy="8" rx="8" ry="6" fill="rgba(186,85,211,0.25)"/><line x1="0" y1="-15" x2="0" y2="15" stroke="rgba(139,69,19,0.4)" stroke-width="2"/></g></svg>'), radial-gradient(circle at 20% 60%, rgba(255,182,193,0.2) 2px, transparent 2px), radial-gradient(circle at 80% 40%, rgba(255,105,180,0.15) 1.5px, transparent 1.5px), radial-gradient(circle at 60% 80%, rgba(221,160,221,0.18) 1px, transparent 1px), repeating-linear-gradient(#f5f1eb, #f5f1eb 26px, #e8ddd1 27px, #e8ddd1 28px); 
+            background-position: 10% 20%, 90% 10%, 80% 85%, 20% 70%, 5% 15%, 90% 35%, 25% 25%, 70% 60%, 45% 80%, 85% 75%, 15% 60%, 0 0, 0 0, 0 0, 0 0; 
+            background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 140px 140px, 90px 90px, 70px 70px, 100px 100px, 120px 120px, 80px 80px, 110px 110px, 25px 25px, 30px 30px, 20px 20px, auto; 
+            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat, repeat, repeat, repeat; 
+            background-attachment: fixed; 
         } 
         .container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; position: relative; padding: 20px; min-height: calc(100vh - 40px); z-index: 1; } 
         .torn-edge { position: relative; background-color: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 15px; transform: rotate(var(--rotation, 0deg)); border: 1px dashed #bebbb2; z-index: 2; } 
@@ -122,30 +136,23 @@
         .note:before { content: ''; position: absolute; width: 0; height: 0; border-style: solid; border-width: 10px 10px 0 0; border-color: #bebbb2 transparent transparent transparent; right: 0; top: 0; box-shadow: 1px -1px 2px rgba(0,0,0,0.1); } 
         .note-small-top { grid-column: 2 / 5; grid-row: 2; --rotation: -5deg; top: -20px; } 
         .note-small-bottom { grid-column: 9 / 12; grid-row: 6; --rotation: 3deg; left: -30px; bottom: -20px; } 
-        .music-player { grid-column: 1 / 4; grid-row: 8; align-self: start; margin-top: 20px; transform: rotate(4deg); z-index: 5; } 
-        .music-player h3 { font-family: 'Just Another Hand', cursive; font-size: 1.8em; margin-top: 0; margin-bottom: 10px; color: #3d3d3d; } 
-        .music-player audio { width: 100%; } 
         
-        @media (max-width: 900px) { 
-            body { background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 150px 150px, 90px 90px, 70px 70px, 100px 100px, 120px 120px, 80px 80px, 110px 110px, 25px 25px, 30px 30px, 20px 20px, auto; } 
-            .container { grid-template-columns: 1fr; padding: 10px; } 
-            .site-header h1 { font-size: 3.5em; } 
-            .nav-sketch { flex-wrap: wrap; justify-content: center; gap: 15px; transform: none; } 
-            .birthday-feature, .photo-gallery-sketch, .note-small-top, .note-small-bottom, .music-player { grid-column: 1 / -1; grid-row: auto; transform: none; margin-bottom: 20px; } 
-            .photo-gallery-sketch { grid-template-columns: 1fr; padding: 15px; } 
-            .photo-gallery-sketch .photo-item { transform: none; } 
-            .photo-note { font-size: 13px; } 
-            .preloader-text { font-size: 4em; }
-            .cake-svg { width: 120px; height: 120px; }
-        } 
+        /* ✨ The @media query for mobile has been removed. ✨ */
+
     </style>
 </head>
 <body>
 
+    <audio id="birthday-audio" loop>
+        <source src="audio/Count-On-Me.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <div id="preloader">
         <div class="preloader-content">
             <h1 class="preloader-text">Happy Birthday!</h1>
-            <svg class="cake-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+            <h1 class="preloader-text">Duggalsahab</h1>
+            <svg id="cake-btn" class="cake-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
                 <path class="flame" d="M99.5,48 C102,42 104,44 104,44 C104,44 106,42 108.5,48 C110,52 104,58 104,58 C104,58 98,52 99.5,48 Z"/>
                 <path class="flame" d="M69.5,58 C72,52 74,54 74,54 C74,54 76,52 78.5,58 C80,62 74,68 74,68 C74,68 68,62 69.5,58 Z" style="animation-delay: 0.2s;"/>
                 <path class="flame" d="M129.5,58 C132,52 134,54 134,54 C134,54 136,52 138.5,58 C140,62 134,68 134,68 C134,68 128,62 129.5,58 Z" style="animation-delay: 0.4s;"/>
@@ -179,27 +186,28 @@
             <div class="photo-item"> <img src="4.jpeg" alt="Birthday memory 1"><span class="photo-note">river crossing training ifykyk</span> </div>
         </section>
 
-        <div class="music-player torn-edge pinned top-right">
-            <h3>Birthday Soundtrack</h3>
-            <audio controls loop>
-                <source src="background_music.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-            <p style="font-size: 0.8em; margin-top: 10px;">(A little background magic for your day!)</p>
-        </div>
-
         <div class="note torn-edge pinned bottom-right note-small-bottom" style="--rotation: 3deg;"><p>So many more adventures to come! stay blessed and keep smiling . ✨</p></div>
 
     </div>
 
     <script>
-        window.onload = function() {
-            const preloader = document.getElementById('preloader');
-            // Set a minimum display time for the preloader (e.g., 2500ms)
-            setTimeout(() => {
-                preloader.classList.add('preloader-hidden');
-            }, 2500); 
-        };
+        const preloader = document.getElementById('preloader');
+        const audio = document.getElementById('birthday-audio');
+        const cakeBtn = document.getElementById('cake-btn');
+
+        if (cakeBtn) {
+            cakeBtn.addEventListener('click', () => {
+                // Play the audio
+                if (audio) {
+                    audio.play();
+                }
+                
+                // Hide the preloader
+                if (preloader) {
+                    preloader.classList.add('preloader-hidden');
+                }
+            });
+        }
     </script>
 </body>
 </html>

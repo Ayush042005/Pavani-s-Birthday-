@@ -7,7 +7,7 @@
    is as follows:
 
 ## Modules and Functions used:
-  **modules import**
+  ##### modules import
      secrets: Used to generate cryptographically strong random numbers for password creation, ensuring the output cannot be predicted (unlike the standard random module).
      cryptography.fernet: A third-party library used for symmetric encryption. It handles the encryption of passwords before they are saved to the JSON file and decrypts them when retrieved.
      json: Handles the serialization and deserialization of the data, allowing the program to read and write the password vault as a structured JSON object.

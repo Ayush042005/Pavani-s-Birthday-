@@ -14,7 +14,7 @@
      re: The Regular Expression module is used in validate_service_name to ensure input sanitization and in check_password_strength to detect specific character types (uppercase, digits, symbols).
      sys: Used to perform system-level operations, specifically sys.exit(1) to terminate the program securely if authentication fails.
 
-   **Funtions used**
+   **Funtions used** <br>
      secrets.choice(): Used to securely select random characters from the character pool.
      secrets.SystemRandom().shuffle(): Used to shuffle the generated password characters to prevent predictable patterns.
      Fernet.encrypt() / Fernet.decrypt(): Methods from the cryptography library used to lock and unlock the password data.
